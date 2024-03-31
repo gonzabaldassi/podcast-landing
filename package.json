@@ -1,0 +1,21 @@
+{
+  "name": "podcast-landing",
+  "version": "1.0.0",
+  "description": "PodcastApp para practicar los conceptos basicos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "bem",
+    "gulp"
+  ],
+  "author": "Gonzalo Baldassi",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  }
+}
