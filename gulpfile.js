@@ -24,3 +24,7 @@ function css(done) {
         )
     done();
 }
+
+exports.css = css;
+
+exports.default = series(css);
