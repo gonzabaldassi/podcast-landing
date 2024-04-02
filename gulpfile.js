@@ -1,5 +1,5 @@
 const {src, dest, watch, series} = require('gulp');
-const sass = require('sass')(require('gulp-sass'));
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -72,5 +72,6 @@ exports.css = css;
 exports.img = img;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
+exports.dev = dev;
 
 exports.default = series(img, versionWebp, versionAvif, css, dev);
