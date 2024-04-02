@@ -5,6 +5,12 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 
+//Imagenes
+const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
+const avif = require('gulp-avif');
+
+
 function css(done) {
     src('./src/sass/main.scss')
         .pipe(
@@ -25,6 +31,46 @@ function css(done) {
     done();
 }
 
-exports.css = css;
+function img(done){
+    src('./src/img/**/*')
+        .pipe(
+            imagemin({optimizationLevel:3})
+        )
+        .pipe(
+            dest('./build/img')
+        )
+    done();
+}
 
-exports.default = series(css);
+function versionWebp(done){
+    src('./src/img/**/*.{jpg, png}')
+        .pipe(
+            webp()
+        )
+        .pipe(
+            dest('./build/img')
+        )
+    done();
+}
+function versionAvif(done){
+    src('./src/img/**/*.{jpg, png}')
+        .pipe(
+            avif()
+        )
+        .pipe(
+            dest('./build/img')
+        )
+    done();
+}
+
+function dev(){
+    watch('./src/sass/**/*.scss', css);
+    watch('./src/img/**/*', img);
+}
+
+exports.css = css;
+exports.img = img;
+exports.versionWebp = versionWebp;
+exports.versionAvif = versionAvif;
+
+exports.default = series(img, versionWebp, versionAvif, css, dev);
