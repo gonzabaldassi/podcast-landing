@@ -72,3 +72,14 @@
 }
 
 
+
+.stats{
+    padding: 5rem 0;
+    
+    &__title{
+        @include m.h2(v.$secondaryColor, v.$primaryColor);
+    }
+    @include m.tablet {
+        padding: 10rem 0;
+    }
+}

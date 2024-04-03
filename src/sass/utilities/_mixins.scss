@@ -46,12 +46,8 @@
 @mixin h2($headingColor, $borderColor){
     color: $headingColor;
     font-size: 3.5rem;
-    margin-top: 0;
     display: inline-block;
 
-    @include tablet {
-        margin-top: 5rem;
-    }
 
     &::after{
         content: "";
