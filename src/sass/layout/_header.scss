@@ -1,0 +1,44 @@
+@use '../utilities/vars' as v;
+@use '../utilities/mixins' as m;
+
+.header{
+    background-image: linear-gradient(v.$secondaryOpacity 0%, v.$secondaryOpacity 100%), url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding: 5rem 0;
+
+    &__logo{
+        max-width: 20rem;
+        margin: 0 auto;
+        
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+
+    &__title{
+        font-size: 4.5rem;
+        max-width: 100%;
+        color: v.$white;
+        text-align: center;
+
+        @include m.tablet {
+            font-size: 6rem;
+            max-width: 40%;
+            text-align: start;
+        }
+    }
+
+    &__btn{
+        @include m.btn(v.$primaryColor, v.$secondaryColor)
+    }
+
+    &__content{
+        padding: 10rem 0;
+
+        @include m.tablet {
+            padding: 15rem 0;
+        }
+    }
+}
