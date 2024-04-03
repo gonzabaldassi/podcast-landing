@@ -46,7 +46,6 @@
 @mixin h2($headingColor, $borderColor){
     color: $headingColor;
     font-size: 3.5rem;
-    position: relative;
     margin-top: 5rem;
     display: inline-block;
 
@@ -56,11 +55,11 @@
 
     &::after{
         content: "";
+        background-color: $borderColor;
+        height: 1rem;
         display: block;
-        border: 5px solid $borderColor;
         width: calc(100% + 1rem);
-        position: absolute;
-        z-index: -1;
-        bottom: 0;
+        margin: -1.4rem 0 0 0;
+
     }
 }
