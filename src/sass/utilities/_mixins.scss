@@ -42,3 +42,25 @@
         
     }
 }
+
+@mixin h2($headingColor, $borderColor){
+    color: $headingColor;
+    font-size: 3.5rem;
+    position: relative;
+    margin-top: 5rem;
+    display: inline-block;
+
+    @include tablet {
+        margin-top: 0;
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        border: 5px solid $borderColor;
+        width: calc(100% + 1rem);
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+    }
+}

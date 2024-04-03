@@ -18,24 +18,8 @@
     }
 
     &__title{
-        color: v.$secondaryColor;
-        font-size: 3.5rem;
-        position: relative;
-        margin-top: 5rem;
-        display: inline-block;
-
-        @include m.tablet {
-            margin-top: 0;
-        }
-
-        &::after{
-            content: "";
-            display: block;
-            border: 5px solid v.$primaryColor;
-            width: calc(100% + 1rem);
-            position: absolute;
-            z-index: -1;
-            bottom: 0;
-        }
+        @include m.h2(v.$secondaryColor, v.$primaryColor);
     }
 }
+
+
