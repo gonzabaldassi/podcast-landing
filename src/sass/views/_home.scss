@@ -1,0 +1,41 @@
+@use '../utilities/vars' as v;
+@use '../utilities/mixins' as m;
+
+.creation{
+    padding: 10rem 0;
+
+    &__grid{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.6rem;
+            align-items: center;
+        }
+    }
+
+    &__title{
+        color: v.$secondaryColor;
+        font-size: 3.5rem;
+        position: relative;
+        margin-top: 5rem;
+        display: inline-block;
+
+        @include m.tablet {
+            margin-top: 0;
+        }
+
+        &::after{
+            content: "";
+            display: block;
+            border: 5px solid v.$primaryColor;
+            width: calc(100% + 1rem);
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+        }
+    }
+}
