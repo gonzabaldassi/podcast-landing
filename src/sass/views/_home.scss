@@ -83,3 +83,117 @@
         padding: 10rem 0;
     }
 }
+
+.plans{
+    background-color: v.$secondaryColor;
+    padding: 5rem 0;
+    
+    &__title{
+        @include m.h2(v.$white, v.$primaryColor);
+    }
+
+    &__text{
+        color: v.$white;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        
+
+        @include m.tablet {
+            flex-direction: row;
+            max-width: 80rem;
+            margin: 10rem auto 0 auto;
+        }
+    }
+
+    @include m.tablet {
+        padding: 10rem 0;
+    }
+}
+
+.plan{
+    background-color: v.$white;
+    flex-grow: 1;
+    padding: 16rem 4rem 4rem;
+    border-bottom: 1px solid #e1e1e1;
+
+    &--inicio{
+        background-image: url(../img/icono_inicio.svg);
+        background-repeat: no-repeat;
+        background-position: center 2rem;
+        background-size: 10rem;
+        order: 3;
+    }
+
+    &--negocio{
+        background-color: v.$primaryColor;
+        background-image: url(../img/icono_negocio.svg);
+        background-repeat: no-repeat;
+        background-position: center 7rem;
+        background-size: 10rem;
+        order: 1;
+        padding-top: 21rem;
+
+        @include m.tablet {
+            margin: -5rem 0;
+            border-radius: 2rem;
+            z-index: 1;
+        }
+    }
+
+    &--pro{
+        background-image: url(../img/icono_pro.svg);
+        background-repeat: no-repeat;
+        background-position: center 2rem;
+        background-size: 10rem;
+        order: 2;
+    }
+
+    &--inicio, &--pro, &--negocio{
+        @include m.tablet {
+            order: unset;
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+    }
+
+    &__price{
+        font-weight: 700;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+
+    &__list{
+        &__item{
+            text-align: center;
+            margin-bottom: 2rem;
+
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__btn{
+        @include m.btn(v.$primaryColor, v.$secondaryColor);
+        border: 2px solid v.$white;
+        margin-top: 2rem;
+        display: block;
+
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+
+    @include m.tablet {
+        border: none;
+        transition: transform .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
