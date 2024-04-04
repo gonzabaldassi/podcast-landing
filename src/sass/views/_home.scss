@@ -197,3 +197,59 @@
         }
     }
 }
+
+
+.footer{
+    background-color: v.$secondaryColor;
+
+    &__logo{
+        width: 20rem;
+        margin: 0 auto 5rem;
+        
+        @include m.tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__container{
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+        }
+
+        padding: 5rem 0;
+    }
+
+    &__section{
+        text-align: center;
+
+        @include m.tablet {
+            text-align: unset;
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        color: v.$primaryColor;
+    }
+
+    &__navbar{
+        &__list{
+            color: v.$white;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__copy{
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: v.$white;
+        padding: 1rem;
+        border-top: 2px solid v.$primaryColor;
+        max-width: 120rem;
+    }
+
+}
